@@ -18,9 +18,15 @@ DEPENDENCIES:
   - Nimble (~> 7.0.2)
   - Quick (~> 1.2.0)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Nimble
+    - PlotPlugin
+    - Quick
+
 EXTERNAL SOURCES:
   Empyr:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   Empyr: cb74f94f2efcc17304261b28f8bf4559654a974c
@@ -30,4 +36,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: d1eb7255297918da8049dbfdc34b8be1421cdd9b
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0
