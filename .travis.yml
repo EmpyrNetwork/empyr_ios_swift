@@ -11,5 +11,5 @@ before_install:
  - pod repo update # Trying to resolve issue with pre-release warning
  - pod install --project-directory=Example
 script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/Empyr.xcworkspace -scheme Empyr-Example -sdk iphonesimulator11.2 ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/Empyr.xcworkspace -scheme Empyr-Example -sdk iphonesimulator11.2 -destination 'platform=iOS Simulator,name=iPhone 7,OS=11.2' ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint
