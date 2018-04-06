@@ -1,0 +1,32 @@
+PODS:
+  - Empyr (0.1.0):
+    - Empyr/Core (= 0.1.0)
+  - Empyr/Core (0.1.0)
+  - Empyr/PPO (0.1.0):
+    - Empyr/Core
+    - PlotPlugin (~> 2.1.0-beta)
+  - Empyr/Tracker (0.1.0)
+  - Nimble (7.0.3)
+  - PlotPlugin (2.1.0-beta2)
+  - Quick (1.2.0)
+
+DEPENDENCIES:
+  - Empyr (from `../`)
+  - Empyr/PPO (from `../`)
+  - Empyr/Tracker (from `../`)
+  - Nimble (~> 7.0.2)
+  - Quick (~> 1.2.0)
+
+EXTERNAL SOURCES:
+  Empyr:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Empyr: 30db0474b77c0b17afd2f677370203f27e21daa3
+  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  PlotPlugin: 0107542c7cdeaaa09899b02daf467b73db3f85ca
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+
+PODFILE CHECKSUM: d1eb7255297918da8049dbfdc34b8be1421cdd9b
+
+COCOAPODS: 1.4.0

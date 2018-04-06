@@ -30,6 +30,12 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Use of your location will allow us to send deals to you whenever they are nearby.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Use of your location will allow us to send deals to you whenever they are nearby.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Use of your location will allow us to send deals to you whenever they are nearby.</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

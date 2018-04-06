@@ -9,28 +9,37 @@
 Pod::Spec.new do |s|
   s.name             = 'Empyr'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of Empyr.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.summary          = 'Empyr: A foundation for card link offer platforms.'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Empyr is a full-stack card linked offer platform that enables companies to bring card linked offers to consumers and businesses.
                        DESC
 
-  s.homepage         = 'https://github.com/Jarrod Cuzens/Empyr'
+  s.homepage         = 'https://www.empyr.com'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Jarrod Cuzens' => 'jcuzens@gmail.com' }
-  s.source           = { :git => 'https://github.com/Jarrod Cuzens/Empyr.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'Empyr' => 'developer@empyr.com' }
+  s.source           = { :git => 'https://github.com/EmpyrNetwork/empyr_ios_swift.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
-
-  s.source_files = 'Empyr/Classes/**/*'
+  s.swift_version = '4.0'
+  
+  s.default_subspecs = %w[Core]
+  
+  s.subspec "Core" do |s|
+	  s.source_files = "EmpyrCore/**/*"
+  end
+  
+  s.subspec "PPO" do |s|
+	  s.source_files = "EmpyrPPO/**/*"
+	  s.dependency "Empyr/Core"
+	  s.dependency "PlotPlugin", "~> 2.1.0-beta"
+  end
+  
+  s.subspec "Tracker" do |s|
+	  s.source_files = "EmpyrTracker/**/*"
+	  s.dependency "Empyr/Core"
+  end
   
   # s.resource_bundles = {
   #   'Empyr' => ['Empyr/Assets/*.png']
@@ -38,5 +47,5 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  
 end

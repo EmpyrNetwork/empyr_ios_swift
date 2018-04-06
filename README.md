@@ -1,6 +1,6 @@
-# Empyr
+# Empyr iOS Swift Library
 
-[![CI Status](http://img.shields.io/travis/Jarrod Cuzens/Empyr.svg?style=flat)](https://travis-ci.org/Jarrod Cuzens/Empyr)
+[![CI Status](http://img.shields.io/travis/EmpyrNetwork/empyr_ios_swift.svg?style=flat)](https://travis-ci.org/EmpyrNetwork/empyr_ios_swift)
 [![Version](https://img.shields.io/cocoapods/v/Empyr.svg?style=flat)](http://cocoapods.org/pods/Empyr)
 [![License](https://img.shields.io/cocoapods/l/Empyr.svg?style=flat)](http://cocoapods.org/pods/Empyr)
 [![Platform](https://img.shields.io/cocoapods/p/Empyr.svg?style=flat)](http://cocoapods.org/pods/Empyr)
@@ -22,7 +22,7 @@ pod 'Empyr'
 
 ## Author
 
-Jarrod Cuzens, jcuzens@gmail.com
+Empyr Development, developer@empyr.com
 
 ## License
 

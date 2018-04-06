@@ -2,11 +2,15 @@ use_frameworks!
 
 target 'Empyr_Example' do
   pod 'Empyr', :path => '../'
+  pod 'Empyr/PPO', :path => '../'
+  pod 'Empyr/Tracker', :path => '../'
+end
 
-  target 'Empyr_Tests' do
-    inherit! :search_paths
-
-    pod 'Quick', '~> 1.2.0'
-    pod 'Nimble', '~> 7.0.2'
-  end
+target 'Empyr_Tests' do
+	pod 'Empyr', :path => '../'
+	pod 'Empyr/PPO', :path => '../'
+	pod 'Empyr/Tracker', :path => '../'
+	
+	pod 'Quick', '~> 1.2.0'
+	pod 'Nimble', '~> 7.0.2'
 end
