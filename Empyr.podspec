@@ -33,7 +33,7 @@ Empyr is a full-stack card linked offer platform that enables companies to bring
   s.subspec "PPO" do |s|
 	  s.source_files = "EmpyrPPO/**/*"
 	  s.dependency "Empyr/Core"
-	  s.dependency "PlotPlugin", "~> 2.1.0-beta"
+	  s.dependency "PlotPlugin", "= 2.1.0-beta2"
   end
   
   s.subspec "Tracker" do |s|

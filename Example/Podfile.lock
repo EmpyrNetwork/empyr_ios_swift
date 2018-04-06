@@ -4,8 +4,9 @@ PODS:
   - Empyr/Core (0.1.0)
   - Empyr/PPO (0.1.0):
     - Empyr/Core
-    - PlotPlugin (~> 2.1.0-beta)
-  - Empyr/Tracker (0.1.0)
+    - PlotPlugin (= 2.1.0-beta2)
+  - Empyr/Tracker (0.1.0):
+    - Empyr/Core
   - Nimble (7.0.3)
   - PlotPlugin (2.1.0-beta2)
   - Quick (1.2.0)
@@ -22,7 +23,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Empyr: 30db0474b77c0b17afd2f677370203f27e21daa3
+  Empyr: cb74f94f2efcc17304261b28f8bf4559654a974c
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   PlotPlugin: 0107542c7cdeaaa09899b02daf467b73db3f85ca
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
