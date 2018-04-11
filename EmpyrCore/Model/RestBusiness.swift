@@ -7,7 +7,8 @@
 
 import Foundation
 
-class RestBusiness: Codable {
-	var id: Int
-	var name: String
+@objc( EMPBusiness ) public class RestBusiness: NSObject, Codable {
+	@objc public var id: Int = 0
+	@objc public var name: String = ""
+	@objc public var offers: [RestOffer] = []
 }

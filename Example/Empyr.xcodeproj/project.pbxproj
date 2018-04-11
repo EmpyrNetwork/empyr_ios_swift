@@ -12,10 +12,10 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		6E3B9FB7F65B210AB5261557 /* Pods_Empyr_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2C46A0F4CFA3909A4A8A4FC /* Pods_Empyr_Example.framework */; };
+		717C2F99EAD596924CDF1EB3 /* Pods_Empyr_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3473002C12393DA62C7839B9 /* Pods_Empyr_Tests.framework */; };
 		A717F8F0206065620072F62A /* NetworkRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717F8EF206065620072F62A /* NetworkRequestTests.swift */; };
 		A717F8F7206415640072F62A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717F8F6206415640072F62A /* AppDelegate.swift */; };
-		CF57EC2C4FFFEA0A004A1329 /* Pods_Empyr_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2E0C04A304D0918D25D796 /* Pods_Empyr_Tests.framework */; };
+		BCF5D8A834F10406ED7E677B /* Pods_Empyr_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 946A4BA1037884F278AD71A5 /* Pods_Empyr_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,10 +29,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09C5DC37472937E9E65B589F /* Pods-Empyr_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Empyr_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Empyr_Example/Pods-Empyr_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		1173D645087622186C91AE53 /* Pods-Empyr_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Empyr_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Empyr_Tests/Pods-Empyr_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		0478D1AF1146D09CDECE3BC3 /* Pods-Empyr_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Empyr_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Empyr_Example/Pods-Empyr_Example.release.xcconfig"; sourceTree = "<group>"; };
+		29960B3B4F70D435E630F3A0 /* Pods-Empyr_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Empyr_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Empyr_Example/Pods-Empyr_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		3473002C12393DA62C7839B9 /* Pods_Empyr_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Empyr_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADAB69210415164830C7E08 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		4F4E71F61DF7659C08C3F625 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		59F8CFA39390E5ED222AA9EA /* Pods-Empyr_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Empyr_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Empyr_Tests/Pods-Empyr_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Empyr_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Empyr_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,13 +44,11 @@
 		607FACE51AFB9204008FA782 /* Empyr_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Empyr_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		946A4BA1037884F278AD71A5 /* Pods_Empyr_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Empyr_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F96FF9B7A36347BB78541B5 /* Empyr.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Empyr.podspec; path = ../Empyr.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A717F8EF206065620072F62A /* NetworkRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestTests.swift; sourceTree = "<group>"; };
 		A717F8F6206415640072F62A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B3ECCD4EF43FC419902FA5C1 /* Pods-Empyr_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Empyr_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Empyr_Tests/Pods-Empyr_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		DC2E0C04A304D0918D25D796 /* Pods_Empyr_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Empyr_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EFFD554367155E2A1A3C1177 /* Pods-Empyr_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Empyr_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Empyr_Example/Pods-Empyr_Example.release.xcconfig"; sourceTree = "<group>"; };
-		F2C46A0F4CFA3909A4A8A4FC /* Pods_Empyr_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Empyr_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB7FBD922DF649F86569CA40 /* Pods-Empyr_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Empyr_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Empyr_Tests/Pods-Empyr_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E3B9FB7F65B210AB5261557 /* Pods_Empyr_Example.framework in Frameworks */,
+				BCF5D8A834F10406ED7E677B /* Pods_Empyr_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,20 +64,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF57EC2C4FFFEA0A004A1329 /* Pods_Empyr_Tests.framework in Frameworks */,
+				717C2F99EAD596924CDF1EB3 /* Pods_Empyr_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		190B376496D80292B73B51E4 /* Frameworks */ = {
+		0B297C59B1BF5870D50E5234 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F2C46A0F4CFA3909A4A8A4FC /* Pods_Empyr_Example.framework */,
-				DC2E0C04A304D0918D25D796 /* Pods_Empyr_Tests.framework */,
+				946A4BA1037884F278AD71A5 /* Pods_Empyr_Example.framework */,
+				3473002C12393DA62C7839B9 /* Pods_Empyr_Tests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		21B3CF639C4C10F54D6FE02A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				29960B3B4F70D435E630F3A0 /* Pods-Empyr_Example.debug.xcconfig */,
+				0478D1AF1146D09CDECE3BC3 /* Pods-Empyr_Example.release.xcconfig */,
+				59F8CFA39390E5ED222AA9EA /* Pods-Empyr_Tests.debug.xcconfig */,
+				CB7FBD922DF649F86569CA40 /* Pods-Empyr_Tests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
@@ -87,8 +98,8 @@
 				607FACD21AFB9204008FA782 /* Example for Empyr */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				72244CB666C3E879FA54241D /* Pods */,
-				190B376496D80292B73B51E4 /* Frameworks */,
+				21B3CF639C4C10F54D6FE02A /* Pods */,
+				0B297C59B1BF5870D50E5234 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,17 +162,6 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		72244CB666C3E879FA54241D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				09C5DC37472937E9E65B589F /* Pods-Empyr_Example.debug.xcconfig */,
-				EFFD554367155E2A1A3C1177 /* Pods-Empyr_Example.release.xcconfig */,
-				1173D645087622186C91AE53 /* Pods-Empyr_Tests.debug.xcconfig */,
-				B3ECCD4EF43FC419902FA5C1 /* Pods-Empyr_Tests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -169,11 +169,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Empyr_Example" */;
 			buildPhases = (
-				ED2D01634CF674D7CFF26A74 /* [CP] Check Pods Manifest.lock */,
+				E7F3EB5037F50C85713BEB76 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				650DA03A7A498BBC44A5A5B8 /* [CP] Embed Pods Frameworks */,
+				99DF0EFEC0E85778EED58E21 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,11 +188,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Empyr_Tests" */;
 			buildPhases = (
-				0124699ABE7C06D54D4BD379 /* [CP] Check Pods Manifest.lock */,
+				FFCEBA53C7E1C6F91C022514 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				E4B50EE92DCFF24EE3A0073F /* [CP] Embed Pods Frameworks */,
+				B9A95D0F5F544D565FFDA603 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -265,25 +265,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0124699ABE7C06D54D4BD379 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Empyr_Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		650DA03A7A498BBC44A5A5B8 /* [CP] Embed Pods Frameworks */ = {
+		99DF0EFEC0E85778EED58E21 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -303,7 +285,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Empyr_Example/Pods-Empyr_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E4B50EE92DCFF24EE3A0073F /* [CP] Embed Pods Frameworks */ = {
+		B9A95D0F5F544D565FFDA603 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -327,7 +309,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Empyr_Tests/Pods-Empyr_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ED2D01634CF674D7CFF26A74 /* [CP] Check Pods Manifest.lock */ = {
+		E7F3EB5037F50C85713BEB76 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -339,6 +321,24 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Empyr_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFCEBA53C7E1C6F91C022514 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Empyr_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -497,7 +497,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09C5DC37472937E9E65B589F /* Pods-Empyr_Example.debug.xcconfig */;
+			baseConfigurationReference = 29960B3B4F70D435E630F3A0 /* Pods-Empyr_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Empyr/Info.plist;
@@ -513,7 +513,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFFD554367155E2A1A3C1177 /* Pods-Empyr_Example.release.xcconfig */;
+			baseConfigurationReference = 0478D1AF1146D09CDECE3BC3 /* Pods-Empyr_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Empyr/Info.plist;
@@ -529,7 +529,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1173D645087622186C91AE53 /* Pods-Empyr_Tests.debug.xcconfig */;
+			baseConfigurationReference = 59F8CFA39390E5ED222AA9EA /* Pods-Empyr_Tests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -550,7 +550,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3ECCD4EF43FC419902FA5C1 /* Pods-Empyr_Tests.release.xcconfig */;
+			baseConfigurationReference = CB7FBD922DF649F86569CA40 /* Pods-Empyr_Tests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

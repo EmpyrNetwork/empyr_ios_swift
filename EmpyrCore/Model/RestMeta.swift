@@ -7,8 +7,8 @@
 
 import Foundation
 
-class RestMeta: Codable {
-	var code: Int
-	var error: String?
-	var errorDetails: [String:String]?
+@objc( EMPMeta) class RestMeta: NSObject, Codable {
+	@objc public var code: Int = 0
+	@objc public var error: String?
+	@objc public var errorDetails: [String:String]?
 }

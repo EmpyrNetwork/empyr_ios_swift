@@ -8,35 +8,45 @@
 import Foundation
 import PlotProjects
 
+@objc public protocol EmpyrNearbyBusinessOfferDelegate: class {
+	func nearbyOfferNotification( business: RestBusiness )
+}
+
 /// Empyr Project Perfect Offer client interface.
 /// This class is responible for behaviors around
 /// Project Perfect Offer.
 public class EmpyrPPO: NSObject, PlotDelegate {
 	#if DEBUG
 		static let PLOT_KEY = "Tjbawm4kFd6XuE63"
+		typealias Plots = PlotDebug
 	#else
 		static let PLOT_KEY = "AsD64TkND2bVJnUE"
+		typealias Plots = PlotRelease
 	#endif
+	static let EMPYR_BUS_KEY = "EMPYR_BUS";
+	
 	static var instance: EmpyrPPO? = nil
 	var api: EmpyrAPIClient
 	var tokenObservation: NSKeyValueObservation
 	var askPermissions: Bool
+	weak var delegate: EmpyrNearbyBusinessOfferDelegate?
 	
 	// MARK: - Initializers
-	private init( api: EmpyrAPIClient, askPermissions:Bool = false ){
+	private init( api: EmpyrAPIClient, askPermissions:Bool = false, delegate: EmpyrNearbyBusinessOfferDelegate? = nil ){
 		self.api = api
 		self.askPermissions = askPermissions
+		self.delegate = delegate;
 		
 		// Signals to turn on the Plot tracking for the user.
 		tokenObservation = api.observe(\EmpyrAPIClient.userToken) { _, change in
-			PlotDebug.enable()
+			Plots.enable()
+			Plots.setStringSegmentationProperty(api.clientId, forKey: "application")
 			print( "PPO enabled" )
 		}
 		
 		super.init()
 		
-		PlotDebug.initialize(launchOptions: [:], delegate: self)
-		
+		Plots.initialize(launchOptions: [:], delegate: self)
 		
 		if askPermissions {
 			if #available(iOS 10, *) {
@@ -71,7 +81,7 @@ public class EmpyrPPO: NSObject, PlotDelegate {
 	
 	- returns: A configured EmpyrPPO instance. Typically, not interacted with.
 	*/
-	public static func initialize( api: EmpyrAPIClient, askPermissions:Bool = false ) -> EmpyrPPO? {
+	@objc @discardableResult public static func initialize( api: EmpyrAPIClient, askPermissions:Bool = false, delegate: EmpyrNearbyBusinessOfferDelegate? = nil ) -> EmpyrPPO? {
 		
 		guard let infoPlist = Bundle.main.infoDictionary,
 			infoPlist["NSLocationAlwaysUsageDescription"] as? String != nil,
@@ -82,7 +92,7 @@ public class EmpyrPPO: NSObject, PlotDelegate {
 			return nil
 		}
 		
-		instance = EmpyrPPO( api: api, askPermissions: askPermissions )
+		instance = EmpyrPPO( api: api, askPermissions: askPermissions, delegate: delegate )
 		return instance
 	}
 	
@@ -95,6 +105,20 @@ public class EmpyrPPO: NSObject, PlotDelegate {
 		
 		loadWithConfig(originalConfig)
 		print( "PPO Config loaded" )
+	}
+	
+	@available(iOS 10.0, *)
+	public func plotHandleNotification(_ data: String!, response: UNNotificationResponse!) {
+		guard let d = delegate, let data = response.notification.request.content.userInfo[EmpyrPPO.EMPYR_BUS_KEY] as? Data else {
+			return;
+		}
+		
+		do{
+			let b = try JSONDecoder().decode(RestBusiness.self, from: data)
+			d.nearbyOfferNotification(business: b)
+		}catch {
+			print( "Error deserializing business \(error)" )
+		}
 	}
 	
 	public func plotFilterNotifications(_ filterNotifications: PlotFilterNotifications!) {
@@ -126,14 +150,28 @@ public class EmpyrPPO: NSObject, PlotDelegate {
 			// If any of the keys (businessIds) were a match for
 			// recommendations then show the corresponding recommendation.
 			api.checkRecommendations(Array(businesses.keys), test:test) { (b : RestBusiness?) in
-				guard let rb = b, let n = businesses[rb.id] else {
+				guard let rb = b, let n = businesses[rb.id], let firstOffer = rb.offers.first else {
 					// Business not recommended or a problem connecting to the API.
 					// disregard the notification.
 					filterNotifications.show([])
 					return
 				}
+				
+				let rewardText = firstOffer.getActiveReward();
+				let content = UNMutableNotificationContent();
+				
+				do {
+					content.body = n.content.body.replacingOccurrences(of: "#cashback", with: rewardText);
+					content.userInfo.merge(n.content.userInfo) {(current, _) -> Any in current }
+					content.userInfo[EmpyrPPO.EMPYR_BUS_KEY] = try JSONEncoder().encode( rb );
+				}catch {
+					print( "Error \(error)" )
+				}
+				
+				let request = UNNotificationRequest( identifier: n.identifier, content: content, trigger: n.trigger )
+				
 				// The notification should be shown.
-				filterNotifications.show([n])
+				filterNotifications.show([request])
 			}
 		}else{
 			// We always call the filterNotifications.show() to ensure that
@@ -154,7 +192,7 @@ extension EmpyrAPIClient {
 	func checkRecommendations(_ businessIds: [Int], test: String, completion: @escaping (RestBusiness?) -> Void) {
 		print( "Get recommendations for \(self.userToken!)" )
 		
-		get(url: "/users/\(self.userToken!)/recommendations", params:["businesses": businessIds], expects: ["results": RestResults<RestBusiness>.self]) {
+		get(url: "/users/\(self.userToken!)/recommendations", params:["businesses": businessIds, "test": test], expects: ["results": RestResults<RestBusiness>.self]) {
 			( resp: RestResponse<RestResults<RestBusiness>>?, err: Error? ) in
 			guard let r = resp, let results = r.response.results, results.count > 0 else {
 				completion(nil)

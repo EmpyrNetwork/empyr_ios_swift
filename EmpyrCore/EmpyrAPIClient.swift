@@ -37,7 +37,7 @@ public class EmpyrAPIClient: NSObject {
 	
 	- returns: An EmpyrAPIClient instance configured with the app's client id.
 	*/
-	open class func initialize( clientId: String ) -> EmpyrAPIClient {
+	@objc open class func initialize( clientId: String ) -> EmpyrAPIClient {
 		main = EmpyrAPIClient( clientId: clientId )
 		return main!
 	}
@@ -51,7 +51,7 @@ public class EmpyrAPIClient: NSObject {
 	
 	- returns: The previously configured EmpyrAPIClient.
 	*/
-	open class func mainInstance() -> EmpyrAPIClient {
+	@objc open class func mainInstance() -> EmpyrAPIClient {
 		guard let m = main else {
 			fatalError( "EmpyrAPIClient must be initialized before calling the main instance." )
 		}
@@ -69,7 +69,7 @@ public class EmpyrAPIClient: NSObject {
 	
 	- parameter userToken: The usertoken of the user using the app.
 	*/
-	open func identify( userToken: String ) {
+	@objc open func identify( userToken: String ) {
 		self.userToken = userToken;
 	}
 	

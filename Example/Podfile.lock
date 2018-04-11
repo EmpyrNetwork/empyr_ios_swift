@@ -29,7 +29,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Empyr: cb74f94f2efcc17304261b28f8bf4559654a974c
+  Empyr: 7f150020bc69f7d57a1b43ed273108b57af8ea9d
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   PlotPlugin: 0107542c7cdeaaa09899b02daf467b73db3f85ca
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08

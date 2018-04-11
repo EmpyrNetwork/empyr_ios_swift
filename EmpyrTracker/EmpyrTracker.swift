@@ -12,11 +12,18 @@ import AdSupport
 #endif
 
 /// The Tracker is the type of view
-public enum Tracker : String {
+@objc public enum Tracker : Int {
 	/// The impression occurred on a profile view.
 	case PROFILE_VIEW
 	/// The impression occurred on a search view.
 	case SEARCH_VIEW
+	
+	func name() -> String {
+		switch self {
+		case .PROFILE_VIEW: return "PROFILE_VIEW"
+		case .SEARCH_VIEW: return "SEARCH_VIEW"
+		}
+	}
 }
 
 struct TrackerConstants {
@@ -118,7 +125,7 @@ public class EmpyrTracker {
 	
 	- SeeAlso: Tracker
 	*/
-	func track( offerId: Int, tracker: Tracker ) {
+	@objc open func track( offerId: Int, tracker: Tracker ) {
 		flushQueue.async {
 			self.events[tracker] = self.events[tracker] ?? []
 			self.events[tracker]?.append(offerId)
@@ -149,7 +156,7 @@ public class EmpyrTracker {
 		
 		// Convert the events into data for the log
 		for (k,v) in events {
-			_ = req.addParams([String(describing:k) : v])
+			_ = req.addParams([k.name() : v.map{String($0)}.joined(separator: ",")])
 		}
 		
 		// Clear the events queue since
@@ -161,7 +168,7 @@ public class EmpyrTracker {
 
 /// Extends the API client interface to include the track function.
 extension EmpyrAPIClient {
-	open func track( offerId: Int, tracker: Tracker ) {
+	@objc open func track( offerId: Int, tracker: Tracker ) {
 		EmpyrTracker.mainInstance(api: self).track(offerId: offerId, tracker: tracker)
 	}
 }

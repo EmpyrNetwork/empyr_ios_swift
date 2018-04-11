@@ -10,21 +10,26 @@ import UIKit
 import Empyr
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, EmpyrNearbyBusinessOfferDelegate {
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		
 		let empyrAPI = EmpyrAPIClient.initialize(clientId: "23d5f04e-424b-4751-b862-94cae1787c74")
-		_ = EmpyrPPO.initialize(api: empyrAPI, askPermissions: true)
+		_ = EmpyrPPO.initialize(api: empyrAPI, askPermissions: true, delegate: self)
 		empyrAPI.identify(userToken: "2")
 		empyrAPI.track(offerId: 1234, tracker: Tracker.PROFILE_VIEW)
+		empyrAPI.track(offerId: 4567, tracker: Tracker.PROFILE_VIEW)
+		empyrAPI.track(offerId: 0000, tracker: Tracker.SEARCH_VIEW)
+		empyrAPI.track(offerId: 0001, tracker: Tracker.SEARCH_VIEW)
 		
         // Override point for customization after application launch.
         return true
     }
+	
+	func nearbyOfferNotification(business: RestBusiness) {
+		print( "Business notification \(business.name)" )
+	}
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
