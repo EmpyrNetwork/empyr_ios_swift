@@ -98,10 +98,10 @@ class RestResponse<T> : Decodable {
 			// [String:Any] should have been the <T> param. Note the underlying typed
 			// values will have still been decoded and aren't simply "Any" type.
 			if responseMap.count > 1 {
-				response = responseMap as! T
+				response = (responseMap as! T)
 			}else if responseMap.count == 1 {
 				// The responseMap only had one value so just assign it to the response field directly.
-				response = responseMap.first?.value as! T
+				response = (responseMap.first?.value as! T)
 			}
 		}catch {
 			print( "Error deserializing response: \(error)" )
