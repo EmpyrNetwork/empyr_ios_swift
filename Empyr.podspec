@@ -34,6 +34,7 @@ Empyr is a full-stack card linked offer platform that enables companies to bring
   s.subspec "Tracker" do |s|
 	  s.source_files = "EmpyrTracker/**/*"
 	  s.dependency "Empyr/Core"
+	  s.weak_framework = 'AdSupport'
   end
   
 end

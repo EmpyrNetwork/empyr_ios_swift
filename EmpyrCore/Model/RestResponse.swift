@@ -46,7 +46,7 @@ extension Decodable {
 /// map the [String:Any] dictionary.
 class RestResponse<T> : Decodable {
 	var meta: RestMeta!
-	var response: T!
+	var response: T?
 	
 	enum CodingKeys: String, CodingKey {
 		case meta

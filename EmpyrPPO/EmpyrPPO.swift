@@ -8,7 +8,15 @@
 import Foundation
 import PlotProjects
 
+/// Used by Empyr to inform the application when users are nearby offers.
+/// Should be registered with the EmpyrPPO module at initialization.
 @objc public protocol EmpyrNearbyBusinessOfferDelegate: class {
+	/**
+	Called when a notification about a nearby offer has been opened
+	by the consumer.
+	
+	- parameter business: The business that the user was notified about.
+	*/
 	func nearbyOfferNotification( business: RestBusiness )
 }
 
@@ -78,6 +86,7 @@ public class EmpyrPPO: NSObject, PlotDelegate {
 	- parameter api: The EmpyrAPIClient that the EmpyrPPO will interact with for looking at user recommendations.
 	- parameter askPermissions: Whether the PPO platform should ask permissions automatically on startup for Local Notifications and Background Location Services.
 	If askPermissions is false then you MUST request these permissions in your own app before EmpyrPPO will work.
+	- parameter delegate: Optional. When specified this delegate is called when a notfication is opened.
 	
 	- returns: A configured EmpyrPPO instance. Typically, not interacted with.
 	*/
@@ -194,7 +203,7 @@ extension EmpyrAPIClient {
 		
 		get(url: "/users/\(self.userToken!)/recommendations", params:["businesses": businessIds, "test": test], expects: ["results": RestResults<RestBusiness>.self]) {
 			( resp: RestResponse<RestResults<RestBusiness>>?, err: Error? ) in
-			guard let r = resp, let results = r.response.results, results.count > 0 else {
+			guard let r = resp, let results = r.response?.results, results.count > 0 else {
 				completion(nil)
 				return
 			}
