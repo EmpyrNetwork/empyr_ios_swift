@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, EmpyrNearbyBusinessOfferD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		
 		let empyrAPI = EmpyrAPIClient.initialize(clientId: "23d5f04e-424b-4751-b862-94cae1787c74")
-		_ = EmpyrPPO.initialize(api: empyrAPI, askPermissions: true, delegate: self)
-		empyrAPI.identify(userToken: "2")
+		EmpyrPPO.initialize(api: empyrAPI, launchOptions: launchOptions, askPermissions: true, delegate: self)
+		empyrAPI.identify(userToken: "sanitize2@mojopages.com")
 		empyrAPI.track(offerId: 1234, tracker: Tracker.PROFILE_VIEW)
 		empyrAPI.track(offerId: 4567, tracker: Tracker.PROFILE_VIEW)
 		empyrAPI.track(offerId: 0000, tracker: Tracker.SEARCH_VIEW)

@@ -53,7 +53,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 	// Optional: Initialize Empyr PPO -- This MUST be done at application start.
 	// If you are already using the UNNotificationCenter delegate then you 
 	// should initialize that BEFORE initializing EmpyrPPO.
-	EmpyrPPO.initialize(api: empyrAPI, askPermissions: true, delegate: self)
+	EmpyrPPO.initialize(api: empyrAPI, launchOptions: launchOptions, askPermissions: true, delegate: self)
 	
 	return  true
 }
@@ -71,7 +71,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 	// Optional: Initialize Empyr PPO -- This MUST be done at application start.
 	// If you are already using the UNNotificationCenter delegate then you 
 	// should initialize that BEFORE initializing EmpyrPPO.
-	[EmpyrPPO  initializeWithApi:empyrAPI askPermissions:false  delegate:self];
+	[EmpyrPPO  initializeWithApi:empyrAPI launchOptions: launchOptions askPermissions:false delegate:self];
 }
 
 ```
@@ -113,7 +113,7 @@ Enabling PPO requires the following:
 
 - Add the "Empyr/PPO" submodule in your Podfile. See [Installation](#installation).
 - Add the appropriate permissions to your application. See [Permissions](#permissions).
-- Initialize the PPO library. See [Integrate](#Integrate).
+- Initialize the PPO library. See [Integrate](#integrate).
 - Install a delegate to handle the case when a user opens an event. See [Delegate](#delegate).
 
 <a name="permissions"></a>

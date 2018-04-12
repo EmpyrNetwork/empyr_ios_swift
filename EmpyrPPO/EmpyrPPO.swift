@@ -40,7 +40,7 @@ public class EmpyrPPO: NSObject, PlotDelegate {
 	weak var delegate: EmpyrNearbyBusinessOfferDelegate?
 	
 	// MARK: - Initializers
-	private init( api: EmpyrAPIClient, askPermissions:Bool = false, delegate: EmpyrNearbyBusinessOfferDelegate? = nil ){
+	private init( api: EmpyrAPIClient, launchOptions: [UIApplicationLaunchOptionsKey: Any]?, askPermissions:Bool = false, delegate: EmpyrNearbyBusinessOfferDelegate? = nil ){
 		self.api = api
 		self.askPermissions = askPermissions
 		self.delegate = delegate;
@@ -54,7 +54,7 @@ public class EmpyrPPO: NSObject, PlotDelegate {
 		
 		super.init()
 		
-		Plots.initialize(launchOptions: [:], delegate: self)
+		Plots.initialize(launchOptions: launchOptions, delegate: self)
 		
 		if askPermissions {
 			if #available(iOS 10, *) {
@@ -84,13 +84,14 @@ public class EmpyrPPO: NSObject, PlotDelegate {
 	are not created by EmpyrPPO to the parent delegate.
 	
 	- parameter api: The EmpyrAPIClient that the EmpyrPPO will interact with for looking at user recommendations.
+	- parameter launchOptions: The application launch options. This is necessary for detecting large location changes in the background.
 	- parameter askPermissions: Whether the PPO platform should ask permissions automatically on startup for Local Notifications and Background Location Services.
 	If askPermissions is false then you MUST request these permissions in your own app before EmpyrPPO will work.
 	- parameter delegate: Optional. When specified this delegate is called when a notfication is opened.
 	
 	- returns: A configured EmpyrPPO instance. Typically, not interacted with.
 	*/
-	@objc @discardableResult public static func initialize( api: EmpyrAPIClient, askPermissions:Bool = false, delegate: EmpyrNearbyBusinessOfferDelegate? = nil ) -> EmpyrPPO? {
+	@objc @discardableResult public static func initialize( api: EmpyrAPIClient, launchOptions: [UIApplicationLaunchOptionsKey: Any]?, askPermissions:Bool = false, delegate: EmpyrNearbyBusinessOfferDelegate? = nil ) -> EmpyrPPO? {
 		
 		guard let infoPlist = Bundle.main.infoDictionary,
 			infoPlist["NSLocationAlwaysUsageDescription"] as? String != nil,
@@ -101,7 +102,7 @@ public class EmpyrPPO: NSObject, PlotDelegate {
 			return nil
 		}
 		
-		instance = EmpyrPPO( api: api, askPermissions: askPermissions, delegate: delegate )
+		instance = EmpyrPPO( api: api, launchOptions: launchOptions, askPermissions: askPermissions, delegate: delegate )
 		return instance
 	}
 	
