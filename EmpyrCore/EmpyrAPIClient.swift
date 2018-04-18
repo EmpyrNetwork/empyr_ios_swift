@@ -11,7 +11,8 @@ import Foundation
 public class EmpyrAPIClient: NSObject {
 	static var main : EmpyrAPIClient? = nil
 	
-	let BASE_URL				= "https://www.mogl.com/api/v2"
+	static let BASE_URL			= "https://www.mogl.com/api/v2"
+	static let EMPYR_UT_KEY 	= "EMPYR_UT_KEY";
 	
 	/// The application id of the app that this library is being used by.
 	var clientId: String
@@ -25,6 +26,11 @@ public class EmpyrAPIClient: NSObject {
 	// MARK: - Initializers
 	private init( clientId: String ) {
 		self.clientId = clientId
+		
+		// Use the cached user token.
+		if let ut = UserDefaults.standard.string( forKey: EmpyrAPIClient.EMPYR_UT_KEY ) {
+			userToken = ut
+		}
 	}
 	
 	/**
@@ -71,6 +77,8 @@ public class EmpyrAPIClient: NSObject {
 	*/
 	@objc open func identify( userToken: String ) {
 		self.userToken = userToken;
+		
+		UserDefaults.standard.set(userToken, forKey: EmpyrAPIClient.EMPYR_UT_KEY)
 	}
 	
 	// MARK: - API Helpers
@@ -85,7 +93,7 @@ public class EmpyrAPIClient: NSObject {
 	- parameter completionHandler: The endpoint to call after the url rquest has been completed.
 	*/
 	func get<T,Y: Codable>( url: String, params: [String:Any], expects: [String:Y.Type], completionHandler: @escaping( RestResponse<T>?, Error? ) -> Void ) {
-		NetworkRequest.get(url: BASE_URL + url)
+		NetworkRequest.get(url: EmpyrAPIClient.BASE_URL + url)
 			.addHeaders(["Accepts": "application/json"])
 			.addParams(["client_id": clientId])
 			.addParams(params)

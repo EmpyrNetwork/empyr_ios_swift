@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Empyr'
-  s.version          = '0.9.1'
+  s.version          = '0.9.2'
   s.summary          = 'Empyr: A foundation for card link offer platforms.'
 
   s.description      = <<-DESC
