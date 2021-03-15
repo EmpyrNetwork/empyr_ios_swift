@@ -12,5 +12,5 @@ target 'Empyr_Tests' do
 	pod 'Empyr/Tracker', :path => '../'
 	
 	pod 'Quick', '~> 1.2.0'
-	pod 'Nimble', '~> 7.0.2'
+	pod 'Nimble', '~> 9.0.0'
 end

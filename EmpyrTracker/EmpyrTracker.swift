@@ -7,10 +7,6 @@
 
 import Foundation
 
-#if !EMPYR_NO_IDFA
-import AdSupport
-#endif
-
 /// The Tracker is the type of view
 @objc public enum Tracker : Int {
 	/// The impression occurred on a profile view.
@@ -95,28 +91,6 @@ public class EmpyrTracker {
 		return m
 	}
 	
-	/*
-	Returns the IDFA which will be attached to tracking. Note that this will also
-	mean that usage of IDFA will need to be disclosed when submitting to the app
-	store.
-	
-	The IDFA data is used to coordinate segmenting users to provide additional offers
-	to users. If segmentation is not desired then EMPYR_NO_DATA should be defined.
-	*/
-	func identifierForAdvertising() -> String? {
-		#if !EMPYR_NO_IDFA
-			// Check whether advertising tracking is enabled
-			guard ASIdentifierManager.shared().isAdvertisingTrackingEnabled else {
-				return nil
-			}
-			
-			// Get and return IDFA
-			return ASIdentifierManager.shared().advertisingIdentifier.uuidString
-		#else
-			return nil
-		#endif
-	}
-	
 	/**
 	Adds an offer impression view to the tracking queue.
 	
@@ -145,10 +119,6 @@ public class EmpyrTracker {
 		// Basic parameter building including the app id, idfa, and usertoken when available.
 		let req = NetworkRequest.get(url: TrackerConstants.TRACKER_URL)
 			.addParams(["client_id": empyrAPI.clientId])
-		
-		if let id = identifierForAdvertising() {
-			_ = req.addParams(["dev_id" : id])
-		}
 		
 		if let token = empyrAPI.userToken {
 			_ = req.addParams(["ut": token])

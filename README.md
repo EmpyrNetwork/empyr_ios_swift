@@ -90,8 +90,6 @@ EmpyrAPIClient.mainInstance().identify(userToken: "pubid@pub-empyr.com")
 ```
 
 ## Tracker
-> **WARNING** -- The Tracker component uses IDFA. You must add the AdSupport framework to your project. When submitting to the App Store you should disclose the use of the IDFA tracking to Apple or risk rejection.
-
 When an offer is being viewed by a user the EmpyrAPI should be notified. The offerId would be the offer that is being viewed by the user and **IS NOT** the business id but the actual offer id. For any given business if there is more than one offer then this would result in more than one call to the track function. Additionally, it is important to identify the type of impression (e.g. if it was a "profile" view or a "search" view).
 
 **Swift**
