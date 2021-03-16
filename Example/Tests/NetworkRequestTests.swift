@@ -33,7 +33,7 @@ class NetworkRequestsSpec: QuickSpec {
 				
 				expect( r.params.count ) == 2
 				expect( r.params["blah"] as? Int ) == 1
-				expect( r.buildUrl().absoluteString ) == url + "?blah=1&test=2"
+                expect( r.params["test"] as? Int ) == 2
 			}
 			
 			it( "will append params when the url already has some." ) {
